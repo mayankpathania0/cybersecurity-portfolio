@@ -27,6 +27,6 @@ Locate the unique identifier for the user `carlos`, exploit the IDOR flaw to acc
 * The application rendered Carlos's account page, exposing his sensitive account data.
 * Retrieved the target API key: Plaintext  b5LwyOze9vRvqJDkyYaISV891C3WrD55
    
-### 🛡️ Remediation & Prevention
+## 🛡️ Remediation & Prevention
 * Implement Robust Access Controls: Never rely on the un-guessability of identifiers as a primary defense vector. The backend application must validate that the currently logged-in user session has explicit authorization to read or modify the resource specified by the incoming id parameter.
 * Adopt Object-Level Access Control Frameworks: Use server-side verification checks (e.g., matching session.user_id === request.vulnerable_id) before returning sensitive data to the client.
