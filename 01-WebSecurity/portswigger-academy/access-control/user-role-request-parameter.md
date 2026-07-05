@@ -26,7 +26,7 @@ Access the restricted administration panel at `/admin` and delete the user `carl
 * Forwarded the response to the browser.
 * With the modified cookie active in the browser session, navigated back to /admin. The administrative dashboard loaded successfully.
 * Triggered the deletion action for the user carlos.
-### 🛡️ Remediation & Prevention
+## 🛡️ Remediation & Prevention
 The root cause of this flaw is relying on untrusted client-side inputs for access control decisions.
 1. Server-Side Verification: User roles and permissions must be tracked securely on the server-side session object, not stored in modifiable client-side flags or cookies.
 2. Cryptographic Integrity: If roles must be stored client-side (e.g., in a JWT), the token must be cryptographically signed by the server using a strong, secret key to prevent unauthorized tampering.
